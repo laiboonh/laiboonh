@@ -23,7 +23,7 @@ repos:
 
       - id: mix-credo
         name: "elixir: mix credo"
-        entry: mix credo
+        entry: mix credo --strict
         language: system
         pass_filenames: false
         files: \.exs*$
