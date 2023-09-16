@@ -1,9 +1,10 @@
 defmodule LaiboonhWeb.UserAuthTest do
   use LaiboonhWeb.ConnCase, async: true
 
-  alias Phoenix.LiveView
   alias Laiboonh.Accounts
   alias LaiboonhWeb.UserAuth
+  alias Phoenix.LiveView
+
   import Laiboonh.AccountsFixtures
 
   @remember_me_cookie "_laiboonh_web_user_remember_me"

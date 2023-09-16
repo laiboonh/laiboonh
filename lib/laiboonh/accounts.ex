@@ -6,7 +6,7 @@ defmodule Laiboonh.Accounts do
   import Ecto.Query, warn: false
   alias Laiboonh.Repo
 
-  alias Laiboonh.Accounts.{User, UserToken, UserNotifier}
+  alias Laiboonh.Accounts.{User, UserNotifier, UserToken}
 
   ## Database getters
 
