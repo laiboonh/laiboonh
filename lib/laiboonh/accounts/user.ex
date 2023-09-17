@@ -10,6 +10,14 @@ defmodule Laiboonh.Accounts.User do
     field :hashed_password, :string, redact: true
     field :confirmed_at, :naive_datetime
 
+    has_many :user_roles, Laiboonh.Accounts.UserRole
+
+    has_many :roles,
+      through: [:user_roles, :role]
+
+    has_many :privileges,
+      through: [:user_roles, :role, :role_privileges, :privilege]
+
     timestamps()
   end
 

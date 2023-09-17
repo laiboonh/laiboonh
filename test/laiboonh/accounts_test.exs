@@ -335,12 +335,20 @@ defmodule Laiboonh.AccountsTest do
     setup do
       user = user_fixture()
       token = Accounts.generate_user_session_token(user)
+
+      role_name = "ADMIN"
+      role = insert(:role, name: role_name)
+      privilege = insert(:privilege, name: "DELETE_USER")
+      Laiboonh.Rbacs.assign_privileges_to_role(role_name, [privilege])
+      Laiboonh.Rbacs.assign_roles_to_user(user.email, [role])
+
       %{user: user, token: token}
     end
 
     test "returns user by token", %{user: user, token: token} do
       assert session_user = Accounts.get_user_by_session_token(token)
       assert session_user.id == user.id
+      assert [%Laiboonh.Accounts.Privilege{name: "DELETE_USER"}] = session_user.privileges
     end
 
     test "does not return user for invalid token" do
