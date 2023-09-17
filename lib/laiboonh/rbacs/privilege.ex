@@ -3,6 +3,8 @@ defmodule Laiboonh.Rbacs.Privilege do
 
   import Ecto.Changeset
 
+  @type t :: %__MODULE__{}
+
   @primary_key {:id, :binary_id, autogenerate: true}
 
   schema "privileges" do
