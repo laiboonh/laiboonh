@@ -9,3 +9,8 @@
 - `mix phx.gen.auth Accounts User users`
 - `brew install pre-commit`
 - `pre-commit install`
+
+## Resource
+
+- How to use UUID as key for schemas https://elixircasts.io/uuid-primary-key-with-ecto
+- How to use utc_datetime_usec for timestamps https://www.creativedeletion.com/2019/06/17/utc-timestamps-in-ecto.html

@@ -26,6 +26,7 @@ defmodule Laiboonh.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Laiboonh.DataCase
+      import Laiboonh.Factory
     end
   end
 
