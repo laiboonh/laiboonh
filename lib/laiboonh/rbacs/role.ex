@@ -5,13 +5,14 @@ defmodule Laiboonh.Rbacs.Role do
 
   @type t :: %__MODULE__{}
 
-  @primary_key {:id, :binary_id, autogenerate: true}
+  @primary_key {:id, Ecto.ULID, autogenerate: true}
+  @foreign_key_type Ecto.ULID
 
   schema "roles" do
     field :name, :string
 
     many_to_many :privileges, Laiboonh.Rbacs.Privilege,
-      join_through: "roles_privileges",
+      join_through: Laiboonh.Accounts.RolePrivilege,
       on_replace: :delete
 
     timestamps()

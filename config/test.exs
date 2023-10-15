@@ -14,7 +14,10 @@ config :laiboonh, Laiboonh.Repo,
   hostname: "localhost",
   database: "laiboonh_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
-  pool_size: 10
+  pool_size: 10,
+  migration_primary_key: [name: :id, type: :binary_id],
+  migration_foreign_key: [column: :id, type: :binary_id],
+  migration_timestamps: [type: :utc_datetime_usec]
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
